@@ -9,9 +9,9 @@ public class ComputerPlayer implements Player {
 	@Override
 	public long askNextGuess() {
 		if (lastGuess == null) {
-			lastGuess = new SecureRandom().nextLong();
+			lastGuess = new SecureRandom().nextLong(0, Long.MAX_VALUE);
 		}
-		lastGuess = response ? lastGuess + 1 : lastGuess - 1;
+		lastGuess = response ? lastGuess * 2 : lastGuess / 2; // FIXME
 		return lastGuess;
 	}
 

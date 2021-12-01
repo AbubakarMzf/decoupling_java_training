@@ -5,8 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class LoggerFactory {
 
-	@Contract(value = "_ -> new", pure = true)
-	public static @NotNull Logger getLogger(String name) {
-		return new ConsoleLogger();
+	public static @NotNull Logger getLogger(Class<?> callerClass, String name) {
+		return new ContextualLogger(callerClass, new FileLogger(System.getProperty("user.home") + "/Desktop/file.txt"));
 	}
 }
