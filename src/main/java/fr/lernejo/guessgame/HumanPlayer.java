@@ -6,7 +6,7 @@ import fr.lernejo.logger.LoggerFactory;
 import java.util.Scanner;
 
 public class HumanPlayer implements Player {
-	private static final Logger logger = LoggerFactory.getLogger(HumanPlayer.class, "humanplayer");
+	private static final Logger logger = LoggerFactory.getLogger(HumanPlayer.class.getName());
 
 	@Override
 	public long askNextGuess() {
@@ -23,6 +23,5 @@ public class HumanPlayer implements Player {
 	 * Called by {@link Simulation} to inform that the previous guess was lower or greater that the number to find.
 	 */
 	@Override
-	public void respond(boolean lowerOrGreater) {
-	}
+	public void respond(boolean lowerOrGreater) {}
 }

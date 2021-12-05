@@ -6,7 +6,7 @@ import fr.lernejo.logger.LoggerFactory;
 import java.security.SecureRandom;
 
 public class Launcher {
-	private static final Logger logger = LoggerFactory.getLogger(Launcher.class, "launcher");
+	private static final Logger logger = LoggerFactory.getLogger(Launcher.class.getName());
 
 	public static void main(String[] args) {
 		if (args == null || args.length <= 0) {

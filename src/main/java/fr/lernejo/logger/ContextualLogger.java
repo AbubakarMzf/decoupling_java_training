@@ -4,11 +4,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ContextualLogger implements Logger {
-	private final Class<?> callerClass;
+	private final String callerClass;
 	private final Logger delegateLogger;
 	private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
 
-	public ContextualLogger(Class<?> loggingClass, Logger logger) {
+	public ContextualLogger(String loggingClass, Logger logger) {
 		callerClass = loggingClass;
 		delegateLogger = logger;
 	}
